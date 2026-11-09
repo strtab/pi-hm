@@ -21,8 +21,7 @@ let
 
   # path/derivation -> symlink, attrs -> generated JSON
   mkJsonEntry =
-    name: v:
-    if isSource v then { source = v; } else { source = jsonFormat.generate name v; };
+    name: v: if isSource v then { source = v; } else { source = jsonFormat.generate name v; };
 
   extName = p: baseNameOf (toString p);
 
